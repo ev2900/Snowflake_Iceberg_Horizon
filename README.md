@@ -1,6 +1,12 @@
 # Snowflake Iceberg Horizon
 <img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-000-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-0000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-000-green">
 
+Snowflake can manager (read and write) Iceberg tables. This intergration works via. an external volume in Snowflake pointing to the S3 bucket with Iceberg   
+
+that are registered with the Glue Data Catalog and stored in S3 general purpose buckets. This integration works via. an external volume in Snowflake pointing to the S3 bucket with the Iceberg files and an external catalog in Snowflake pointing to Glue data catalog.
+
+The architecture below depicts this
+
 <img width="500" alt="quick_setup" src="https://github.com/ev2900/Snowflake_Iceberg_Horizon/blob/main/README/Architecture.png">
 
 ## Example
