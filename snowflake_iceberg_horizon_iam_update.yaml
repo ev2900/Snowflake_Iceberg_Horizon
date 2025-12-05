@@ -1,4 +1,4 @@
-Description: CloudFormation stack update for the Snowflake IAM role
+Description: CloudFormation Deployment for reading/writing to Iceberg tables from Snowflake Horizon catalog
 Parameters:
   StorageAwsIamUserArn:
     Type: String
