@@ -9,7 +9,7 @@ Resources:
   #
   # Snowflake IAM Role
   # 
-  SnowflakeIAMRole:
+  SnowflakeHorizonIAMRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -35,7 +35,7 @@ Resources:
 Outputs:
   StorageAwsRoleArn:
     Description: STORAGE_AWS_ROLE_ARN when creating the external volume
-    Value: !GetAtt SnowflakeIAMRole.Arn
+    Value: !GetAtt SnowflakeHorizonIAMRole.Arn
 
   StorageBaseUri:
     Description: Use this for STORAGE_BASE_URL when creating the external volume
