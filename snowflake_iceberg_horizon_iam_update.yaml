@@ -1,0 +1,53 @@
+Description: CloudFormation stack update for the Snowflake IAM role
+Parameters:
+  StorageAwsIamUserArn:
+    Type: String
+    Description: STORAGE_AWS_IAM_USER_ARN
+
+  StorageAwsExternalId:
+    Type: String
+    Description: STORAGE_AWS_EXTERNAL_ID
+Resources:
+  #
+  # S3 Bucket
+  #
+  S3:
+    Type: AWS::S3::Bucket
+  
+  #
+  # Snowflake IAM Role
+  # 
+  SnowflakeIAMRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                AWS: !Ref StorageAwsIamUserArn
+              Action: sts:AssumeRole
+              Condition:
+                StringEquals:
+                  sts:ExternalId: !Ref StorageAwsExternalId
+        Policies:
+          - PolicyName: Admin
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: '*'
+                  Resource: '*'
+
+Outputs:
+  StorageAwsRoleArn:
+    Description: STORAGE_AWS_ROLE_ARN when creating the external volume
+    Value: !GetAtt SnowflakeIAMRole.Arn
+
+  StorageBaseUri:
+    Description: Use this for STORAGE_BASE_URL when creating the external volume
+    Value: !Join 
+      - ''
+      - - 's3://'
+        - !Ref S3
+        - '/iceberg/'
