@@ -1,4 +1,4 @@
-Description: CloudFormation Deployment for reading Iceberg tables from Glue Data Catalog (GDC) via. Snowflake
+Description: CloudFormation Deployment for reading/writing to Iceberg tables from Snowflake Horizon catalog
 Resources:
   #
   # S3 Bucket
