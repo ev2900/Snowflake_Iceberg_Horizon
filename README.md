@@ -1,7 +1,7 @@
 # Snowflake Iceberg Horizon
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-000-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-0000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-000-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-24-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-0000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-000-green">
 
-Snowflake can manager (read and write) Iceberg tables. This intergration works via. an external volume in Snowflake pointing to the S3 bucket with Iceberg.   
+Snowflake can manager (read and write) Iceberg tables. This intergration works via. an external volume in Snowflake pointing to the S3 bucket with Iceberg.
 
 The architecture below depicts this
 
@@ -22,7 +22,7 @@ You can test this integration. Begin by deploying the CloudFormation stack below
 
 <img width="700" alt="quick_setup" src="https://github.com/ev2900/Snowflake_Iceberg_Horizon/blob/main/README/cf_output.png">
 
-Update and run the following SQL in Snowflake.  
+Update and run the following SQL in Snowflake.
 
 ```
 -- Step 1 | Create external volume to link S3 bucket with Snowflake
@@ -50,7 +50,7 @@ Begin by selecting the CloudFormation stack and then *Update stack*, *Make a dir
 
 <img width="700" alt="quick_setup" src="https://github.com/ev2900/Snowflake_Iceberg_Horizon/blob/main/README/update_cf.png">
 
-Then select *Replace existing tempalte* and copy paste the following S3 URL 
+Then select *Replace existing tempalte* and copy paste the following S3 URL
 
 ```https://sharkech-public.s3.amazonaws.com/misc-public/snowflake_iceberg_horizon_iam_update.yaml```
 
@@ -80,7 +80,7 @@ Run the following SQL to a create an Iceberg table Snowflake
 
 ```
 -- Step 3 | Create an Iceberg table
-CREATE OR REPLACE ICEBERG TABLE SAMPLEDATA_ICEBERG_HORIZON  
+CREATE OR REPLACE ICEBERG TABLE SAMPLEDATA_ICEBERG_HORIZON
   CATALOG='SNOWFLAKE'
   EXTERNAL_VOLUME='EXT_VOL_HORIZON_S3'
   BASE_LOCATION='sampledatahorizon'
