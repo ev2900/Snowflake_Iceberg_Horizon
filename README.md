@@ -1,5 +1,5 @@
 # Snowflake Iceberg Horizon
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-24-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-215-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-007-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-24-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-215-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-009-green">
 
 Snowflake can manager (read and write) Iceberg tables. This intergration works via. an external volume in Snowflake pointing to the S3 bucket with Iceberg.
 
